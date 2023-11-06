@@ -28,6 +28,7 @@ public class AreaCheckServlet extends HttpServlet {
             for (double elY : arrY) {
                 ElementForTable element = new ElementForTable(x, Double.toString(elY), r);
                 validator.checkPointInArea(element);
+                element.setTimeOfWork(System.nanoTime());
                 result.getListOfResults().add(element);
             }
             String jsonDotsList = result.toAllDots().toJson();

@@ -16,6 +16,7 @@ public class ControllerServlet extends HttpServlet {
             result = new ResultBean();
             request.getSession().setAttribute("resultBean", result);
         }
+        request.getSession().setAttribute("startTime", System.currentTimeMillis());
         request.getSession().setAttribute("error", "All good");
         request.getRequestDispatcher("/area-check").forward(request, response);
     }
